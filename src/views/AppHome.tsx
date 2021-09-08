@@ -269,9 +269,9 @@ export default function Example() {
                                                 </section>
 
                                                 <section aria-labelledby="options-heading" className="mt-6">
-                                                    <h3 id="options-heading" className="sr-only">
+                                                    {/* <h3 id="options-heading" className="sr-only">
                                                         Product options
-                                                    </h3>
+                                                    </h3> */}
 
                                                     <form>
                                                         {/* Colors */}
@@ -375,7 +375,7 @@ export default function Example() {
             <div className="w-full h-screen">
                 <header className="bg-white z-50 flex">
                     <nav className="flex justify-between w-full bg-white text-gray-600 p-3 pb-3 border b-bottom fixed z-50 pt-8">
-                        <span className="font-bold text-lg">Social Sales</span>
+                        <span className="font-medium text-lg">Home</span>
                         <div className="md:items-center md:w-auto flex">
                             <div className="md:flex hidden">
                                 {links.map((link, i) => (

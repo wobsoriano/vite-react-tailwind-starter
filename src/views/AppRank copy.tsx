@@ -29,8 +29,9 @@ const products = [
         price: '$149',
         discountPrice: '$129',
         comission: '$12',
+        sales: '17',
         rating: 5,
-        promoType: '15% Discount',
+        Sold: '$154,240',
         imageSrc: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6eebe93e-067a-4caf-b51e-b4b9583b3c2c/air-zoom-alphafly-next-mens-racing-shoes-fNntgL.png',
         imageAlt: 'TODO',
         href: '#',
@@ -42,8 +43,9 @@ const products = [
         price: '$149',
         discountPrice: '$129',
         comission: '$12',
+        sales: '13',
         rating: 5,
-        promoType: '15% Discount',
+        Sold: '$134,910',
         imageSrc: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/228c9922-686e-443d-b04b-16857e9af198/zoomx-vaporfly-next-2-mens-racing-shoes-glWqfm.png',
         imageAlt: 'TODO',
         href: '#',
@@ -54,9 +56,9 @@ const products = [
         description: 'Our premiere racing shoe is loaded with new technology and innovation that includes two ultra-responsive Air Zoom pods in the forefoot and additional ZoomX foam in the heel',
         price: '$149',
         discountPrice: '$129',
-        comission: '$12',
+        sales: '10',
         rating: 5,
-        promoType: '15% Discount',
+        Sold: '$111,910',
         imageSrc: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1a7f8760-47d8-4396-9f0a-5feb79598e41/air-zoom-alphafly-next-flyknit-mens-road-racing-shoe-fNntgL.png',
         imageAlt: 'TODO',
         href: '#',
@@ -68,8 +70,9 @@ const products = [
         price: '$149',
         discountPrice: '$129',
         comission: '$12',
+        sales: '8',
         rating: 4,
-        promoType: '15% Discount',
+        Sold: '60,150',
         imageSrc: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e5af7319-a671-4187-a10a-020e09e7b3db/air-max-2021-mens-shoes-8F4Sk5.png',
         imageAlt: 'TODO',
         href: '#',
@@ -83,8 +86,9 @@ const product = {
     price: '$149',
     discountPrice: '$129',
     comission: '$12',
+    sales: '17',
     rating: 3.9,
-    promoType: '15% Discount',
+    Sold: '15% Discount',
     href: '#',
     imageSrc: 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6eebe93e-067a-4caf-b51e-b4b9583b3c2c/air-zoom-alphafly-next-mens-racing-shoes-fNntgL.png',
     imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
@@ -248,8 +252,8 @@ export default function Example() {
     return (
         <div className="select-none">
             <Transition.Root show={open} as={Fragment}>
-                <div className="overflow-hidden bg-white fixed z-40">
-                    <Dialog as="div" className="fixed z-40 inset-0 overflow-y-auto mb-20" onClose={setOpen}>
+                <div className="overflow-hidden bg-white fixed">
+                    <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto mb-16" onClose={setOpen}>
                         <div className="flex min-h-screen text-center md:block md:px-2 lg:px-4" style={{ fontSize: 0 }}>
                             <Transition.Child
                                 as={Fragment}
@@ -276,7 +280,7 @@ export default function Example() {
                                 leaveFrom="opacity-100 translate-y-0 md:scale-100"
                                 leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
                             >
-                                <div className="flex text-base text-left transform transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle lg:max-w-4xl mt-16 overflow-y-scroll z-50">
+                                <div className="flex text-base text-left transform transition w-full md:inline-block md:max-w-2xl md:px-4 md:my-8 md:align-middle lg:max-w-4xl mt-16 overflow-y-scroll">
                                     <div className="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
                                         <button
                                             type="button"
@@ -292,7 +296,7 @@ export default function Example() {
                                                 <img src={product.imageSrc} alt={product.imageAlt} className="w-full object-center object-cover select-none" />
                                             </div>
                                             <div className="sm:col-span-8 lg:col-span-7">
-                                                <h2 className="text-lg font-bold text-gray-900 sm:pr-12 select-none">{product.name}</h2>
+                                                <h2 className="text-lg font-extrabold text-gray-900 sm:pr-12 select-none">{product.name}</h2>
                                                 <section aria-labelledby="information-heading" className="">
                                                     <h3 id="information-heading" className="sr-only select-none">
                                                         Product information
@@ -318,6 +322,18 @@ export default function Example() {
                                                                     <p className="text-lg text-green-700 rounded-md select-none">{product.comission}</p>
                                                                 </div>
                                                             </div>
+                                                            {/* <div className="flex items-center">
+                              {[0, 1, 2, 3, 4].map((rating) => (
+                                <StarIcon
+                                  key={rating}
+                                  className={classNames(
+                                    product.rating > rating ? 'text-gray-900' : 'text-gray-200',
+                                    'h-5 w-5 flex-shrink-0'
+                                  )}
+                                  aria-hidden="true"
+                                />
+                              ))}
+                            </div> */}
                                                         </div>
                                                     </div>
                                                 </section>
@@ -428,8 +444,8 @@ export default function Example() {
 
             <div className="w-full h-screen">
                 <header className="bg-white">
-                    <nav className="flex justify-between w-full bg-white text-gray-600 p-3 pb-3 fixed z-50 pt-8 border b-bottom ">
-                        <span className="font-medium text-lg">Rank</span>
+                    <nav className="flex justify-between w-full bg-white text-gray-600 p-3 pb-3 border b-bottom fixed z-50 pt-8">
+                        <span className="font-bold text-lg">Rank</span>
                         <div className="md:items-center md:w-auto flex">
                             <div className="md:flex hidden">
                                 {links.map((link, i) => (
@@ -455,56 +471,16 @@ export default function Example() {
                         </div>
                     </nav>
                 </header>
-                <header className="bg-white">
-                    <nav className="flex justify-between w-full bg-white text-gray-600 p-2 pb-3 fixed z-40 pt-8">
-                        <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span>
-                    </nav>
-                    <nav className="flex justify-between w-full bg-white text-gray-600 p-2 pb-3 border b-bottom fixed z-30 pt-20">
-                        <div className="w-full relative flex items-center justify-between max-w-6xl mx-auto py-2 mt-0 px-2 text-lg font-medium text-gray-900 sm:px-6 lg:px-8 xl:px-18">
-                            <div className="max-w-xl w-1/2">
-                                <label htmlFor="Promotion" className="block text-xs font-medium text-gray-700">
-                                    Search
-                                </label>
-                                <div className="relative text-gray-400 focus-within:text-gray-600 pr-4">
-                                    <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ml-2" aria-hidden="true">
-                                        <SearchIcon className="h-5 w-5" aria-hidden="true" />
-                                    </div>
-                                    <input
-                                        id="search-field"
-                                        name="search-field"
-                                        className="text-xs mt-1 block w-full pl-8 pr-3 py-2 px-3 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-offset-0 focus:ring-indigo-500 sm:text-sm"
-                                        placeholder=""
-                                        type="search"
-                                    />
-                                </div>
-                            </div>
-                            <div className="max-w-xl w-1/2">
-                                <label htmlFor="Promotion" className="block text-xs font-medium text-gray-700">
-                                    Location
-                                </label>
-                                <select
-                                    id="promotiontype"
-                                    name="promotiontype"
-                                    defaultValue="All"
-                                    className="text-xs form-select mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                >
-                                    <option>All</option>
-                                    <option>Footwear</option>
-                                </select>
-                            </div>
-                        </div>
-                    </nav>
-                </header>
                 <main className="flex-1 relative pb-8 z-0 overflow-y-auto">
                     {/* Page header */}
                     <div className="mt-8">
                         {/* <div className="fixed bg-white"> */}
                         {/* <div className="relative"> */}
                         <div className="relative flex justify-between max-w-6xl mx-auto py-2 mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8 xl:px-8">
-                            {/* <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span> */}
+                            {/* <span className="pr-3 text-lg font-medium text-gray-900">Rank</span> */}
                         </div>
                         {/* </div> */}
-                        {/* 
+
                         <div className="relative flex items-center justify-between max-w-6xl mx-auto py-2 mt-0 px-4 text-lg font-medium text-gray-900 sm:px-6 lg:px-8 xl:px-18">
                             <div className="max-w-xl w-1/2">
                                 <label htmlFor="Promotion" className="block text-xs font-medium text-gray-700">
@@ -537,48 +513,47 @@ export default function Example() {
                                     <option>Footwear</option>
                                 </select>
                             </div>
-
-                        </div> */}
+                            {/* </div> */}
+                        </div>
                         {/* Activity list (smallest breakpoint only) */}
-                        <div className="sm:hidden">
-                            <ul role="list" className="mt-24 pt-5 mb-24 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
+                        <div className="shadow sm:hidden">
+                            <ul role="list" className="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
+
                                 {transactions.map((transaction) => (
-                                    // <button
-                                    //     type="button"
-                                    //     className="w-full"
-                                    //     onClick={() => setOpen(true)}
-                                    // >
-                                    <li key={transaction.id}>
-                                        <a href={transaction.href} className="block px-4 py-4 bg-white hover:bg-gray-50">
-                                            <span className="flex items-center space-x-4">
-                                                <span className="flex-1 flex space-x-2 truncate">
-                                                    {/* <CashIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                                                    <p className="text-gray-500 text-xl group-hover:text-gray-900">{transaction.id}</p>
-                                                    <div className="flex items-center rounded-lg">
-                                                        <a href={transaction.href} className="group inline-flex space-x-8 truncate text-sm">
-                                                            {/* <div className="flex-shrink-0 h-20 w-20 items-center">
-                                    <img className="h-20 w-20 rounded-sm" src={transaction.image} alt="" />
-                                </div> */}
-                                                        </a>
-                                                    </div>
-                                                    <span className="flex flex-col text-left text-gray-500 text-sm truncate">
-                                                        <p className="text-gray-700 text-sm font-medium group-hover:text-gray-900 truncate">{transaction.product}</p>
-                                                        <p className="text-gray-500 text-sm group-hover:text-gray-900">{transaction.Sold}</p>
-                                                        <div className=" border-gray-300 mt-1">
-                                                            <p className="text-sm text-indigo-700 rounded-md">{transaction.sales} Sales</p>
+                                    <button
+                                        type="button"
+                                        className="w-full"
+                                        onClick={() => setOpen(true)}
+                                    >
+                                        <li key={transaction.id}>
+                                            <a href={transaction.href} className="block px-4 py-4 bg-white hover:bg-gray-50">
+                                                <span className="flex items-center space-x-4">
+                                                    <span className="flex-1 flex space-x-2 truncate">
+                                                        {/* <CashIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
+                                                        <div className="flex items-center rounded-lg">
+                                                            <a href={transaction.href} className="group inline-flex space-x-8 truncate text-sm">
+                                                                {/* <div className="flex-shrink-0 h-20 w-20 items-center">
+                                                                    <img className="h-20 w-20 rounded-sm" src={transaction.image} alt="" />
+                                                                </div> */}
+                                                            </a>
                                                         </div>
+                                                        <span className="flex flex-col text-left text-gray-500 text-sm truncate">
+                                                            <p className="text-gray-700 text-sm font-medium group-hover:text-gray-900 truncate">{transaction.product}</p>
+                                                            <p className="text-gray-500 text-sm group-hover:text-gray-900">{transaction.Sold}</p>
+                                                            <div className=" border-gray-300 mt-1">
+                                                                <p className="text-sm text-indigo-700 rounded-md">{transaction.sales} Sales</p>
+                                                            </div>
+                                                        </span>
                                                     </span>
+                                                    <ChevronRightIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
                                                 </span>
-                                                {/* <ChevronRightIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                                            </span>
-                                        </a>
-                                    </li>
-                                    // </button>
+                                            </a>
+                                        </li>
+                                    </button>
                                 ))}
                             </ul>
 
-
-                            {/* <nav
+                            <nav
                                 className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200"
                                 aria-label="Pagination"
                             >
@@ -596,12 +571,12 @@ export default function Example() {
                                         Next
                                     </a>
                                 </div>
-                            </nav> */}
+                            </nav>
                         </div>
 
                         {/* Activity table (small breakpoint and up) */}
                         <div className="hidden sm:block">
-                            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 pt-2">
+                            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="flex flex-col mt-2">
                                     <div className="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
                                         <table className="min-w-full divide-y divide-gray-200">
@@ -630,9 +605,9 @@ export default function Example() {
                                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                                             <div className="flex items-center rounded-lg pr-4">
                                                                 <a href={transaction.href} className="group inline-flex space-x-4 truncate text-sm">
-                                                                    <div className="flex-shrink-0 h-10 w-10">
+                                                                    {/* <div className="flex-shrink-0 h-10 w-10">
                                                                         <img className="h-10 w-10 rounded-sm" src={transaction.image} alt="" />
-                                                                    </div>
+                                                                    </div> */}
                                                                     <p className="text-gray-500 self-center group-hover:text-gray-900">{transaction.product}</p>
                                                                 </a>
                                                             </div>
@@ -737,6 +712,9 @@ export default function Example() {
                     </nav>
                 </div>
             </div>
+
+
+
         </div>
     )
 }

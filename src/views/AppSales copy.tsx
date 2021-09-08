@@ -115,12 +115,11 @@ const transactions = [
         discountPrice: '$150',
         comission: '$15',
         currency: 'USD',
-        Sold: '$180,150',
+        promoType: '15% Discount',
         status: 'Active',
         date: 'September 1, 2021',
         datetime: '2020-07-11',
-        product: 'Robert Williams',
-        sales: '97',
+        product: 'Nike Air Zoom Alphafly NEXT%',
         image:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6eebe93e-067a-4caf-b51e-b4b9583b3c2c/air-zoom-alphafly-next-mens-racing-shoes-fNntgL.png',
     },
@@ -134,12 +133,11 @@ const transactions = [
         discountPrice: '$150',
         comission: '$15',
         currency: 'USD',
-        Sold: '$150,900',
+        promoType: '15% Discount',
         status: 'Active',
         date: 'September 1, 2021',
         datetime: '2020-07-11',
-        product: 'Sally West',
-        sales: '84',
+        product: 'Nike Zoomx Vaporfly Next% 2',
         image:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/228c9922-686e-443d-b04b-16857e9af198/zoomx-vaporfly-next-2-mens-racing-shoes-glWqfm.png',
     },
@@ -152,12 +150,11 @@ const transactions = [
         discountPrice: '$150',
         comission: '$15',
         currency: 'USD',
-        Sold: '$120,250',
+        promoType: '15% Discount',
         status: 'Active',
         date: 'September 1, 2021',
         datetime: '2020-07-11',
-        product: 'Gary Smith',
-        sales: '71',
+        product: 'Nike Air Zoom Alphafly NEXT% Flyknit',
         image:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1a7f8760-47d8-4396-9f0a-5feb79598e41/air-zoom-alphafly-next-flyknit-mens-road-racing-shoe-fNntgL.png',
     },
@@ -170,12 +167,11 @@ const transactions = [
         discountPrice: '$100',
         comission: '$15',
         currency: 'USD',
-        Sold: '$97,100',
+        promoType: '15% Discount',
         status: 'Active',
         date: 'September 1, 2021',
         datetime: '2020-07-11',
-        product: 'Paul North',
-        sales: '62',
+        product: 'Nike Air Max 2021',
         image:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e5af7319-a671-4187-a10a-020e09e7b3db/air-max-2021-mens-shoes-8F4Sk5.png',
     },
@@ -188,12 +184,11 @@ const transactions = [
         discountPrice: '$150',
         comission: '$15',
         currency: 'USD',
-        Sold: '$70,800',
+        promoType: '15% Discount',
         status: 'Active',
         date: 'September 1, 2021',
         datetime: '2020-07-11',
-        product: 'Rodney Collins',
-        sales: '42',
+        product: 'Zoom Freak 3',
         image:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7c73ee6b-5be4-44c0-9790-70e630faccfa/zoom-freak-3-basketball-shoe-8rbspb.png',
     },
@@ -206,12 +201,11 @@ const transactions = [
         discountPrice: '$150',
         comission: '$15',
         currency: 'USD',
-        Sold: '$60,150',
+        promoType: '15% Discount',
         status: 'Unavailable',
         date: 'September 1, 2021',
         datetime: '2020-07-11',
-        product: 'Jenny Conway',
-        sales: '35',
+        product: 'Nike Space Hippie 04',
         image:
             'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03283e6c-87c5-4ef0-81a4-505e7ffaabeb/space-hippie-04-mens-shoes-gGWDLk.png',
     },
@@ -429,7 +423,7 @@ export default function Example() {
             <div className="w-full h-screen">
                 <header className="bg-white">
                     <nav className="flex justify-between w-full bg-white text-gray-600 p-3 pb-3 fixed z-50 pt-8 border b-bottom ">
-                        <span className="font-medium text-lg">Rank</span>
+                        <span className="font-medium text-lg">Promos</span>
                         <div className="md:items-center md:w-auto flex">
                             <div className="md:flex hidden">
                                 {links.map((link, i) => (
@@ -454,6 +448,7 @@ export default function Example() {
                             </div>
                         </div>
                     </nav>
+
                 </header>
                 <header className="bg-white">
                     <nav className="flex justify-between w-full bg-white text-gray-600 p-2 pb-3 fixed z-40 pt-8">
@@ -480,7 +475,7 @@ export default function Example() {
                             </div>
                             <div className="max-w-xl w-1/2">
                                 <label htmlFor="Promotion" className="block text-xs font-medium text-gray-700">
-                                    Location
+                                    Type
                                 </label>
                                 <select
                                     id="promotiontype"
@@ -501,7 +496,7 @@ export default function Example() {
                         {/* <div className="fixed bg-white"> */}
                         {/* <div className="relative"> */}
                         <div className="relative flex justify-between max-w-6xl mx-auto py-2 mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8 xl:px-8">
-                            {/* <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span> */}
+                            <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span>
                         </div>
                         {/* </div> */}
                         {/* 
@@ -541,62 +536,60 @@ export default function Example() {
                         </div> */}
                         {/* Activity list (smallest breakpoint only) */}
                         <div className="sm:hidden">
-                            <ul role="list" className="mt-24 pt-5 mb-24 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
+                            <ul role="list" className="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
+
                                 {transactions.map((transaction) => (
-                                    // <button
-                                    //     type="button"
-                                    //     className="w-full"
-                                    //     onClick={() => setOpen(true)}
-                                    // >
-                                    <li key={transaction.id}>
-                                        <a href={transaction.href} className="block px-4 py-4 bg-white hover:bg-gray-50">
-                                            <span className="flex items-center space-x-4">
-                                                <span className="flex-1 flex space-x-2 truncate">
-                                                    {/* <CashIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                                                    <p className="text-gray-500 text-xl group-hover:text-gray-900">{transaction.id}</p>
-                                                    <div className="flex items-center rounded-lg">
-                                                        <a href={transaction.href} className="group inline-flex space-x-8 truncate text-sm">
-                                                            {/* <div className="flex-shrink-0 h-20 w-20 items-center">
-                                    <img className="h-20 w-20 rounded-sm" src={transaction.image} alt="" />
-                                </div> */}
-                                                        </a>
-                                                    </div>
-                                                    <span className="flex flex-col text-left text-gray-500 text-sm truncate">
-                                                        <p className="text-gray-700 text-sm font-medium group-hover:text-gray-900 truncate">{transaction.product}</p>
-                                                        <p className="text-gray-500 text-sm group-hover:text-gray-900">{transaction.Sold}</p>
-                                                        <div className=" border-gray-300 mt-1">
-                                                            <p className="text-sm text-indigo-700 rounded-md">{transaction.sales} Sales</p>
+                                    <button
+                                        type="button"
+                                        className="w-full"
+                                        onClick={() => setOpen(true)}
+                                    >
+                                        <li key={transaction.id}>
+                                            <a href={transaction.href} className="block px-4 py-4 bg-white hover:bg-gray-50">
+                                                <span className="flex items-center space-x-4">
+                                                    <span className="flex-1 flex space-x-2 truncate">
+                                                        {/* <CashIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
+                                                        <div className="flex items-center rounded-lg">
+                                                            <a href={transaction.href} className="group inline-flex space-x-8 truncate text-sm">
+                                                                <div className="flex-shrink-0 h-20 w-20 items-center">
+                                                                    <img className="h-20 w-20 rounded-sm" src={transaction.image} alt="" />
+                                                                </div>
+                                                            </a>
                                                         </div>
+                                                        <span className="flex flex-col text-left text-gray-500 text-sm truncate">
+                                                            <p className="text-gray-700 text-sm font-medium group-hover:text-gray-900 truncate">{transaction.product}</p>
+                                                            <p className="text-gray-500 text-xs group-hover:text-gray-900">{transaction.promoType}</p>
+                                                            {/* <span>
+                            <span className="text-gray-500 font-medium line-through pr-2">{transaction.amount}</span>{' '}
+                            <span className="text-gray-900 font-medium">{transaction.discountPrice}</span>{' '}
+                        </span>
+                        <span>
+                            <span className="text-green-700 font-medium">{transaction.discountPrice}</span>{' '}Comission
+                        </span> */}
+                                                            {/* <time dateTime={transaction.datetime}>{transaction.date}</time> */}
+                                                            <div className="inline-flex mt-1">
+                                                                <div className="ml-0">
+                                                                    <p className="text-xs text-gray-400 line-through">{product.price}</p>
+                                                                </div>
+                                                                <div className="ml-2 pl-2 border-l border-gray-300">
+                                                                    <p className="text-xs text-gray-900">{product.discountPrice}</p>
+                                                                </div>
+                                                                <div className="ml-2 pl-2 border-l border-gray-300">
+                                                                    <p className="text-xs text-green-700">{product.comission}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div className=" border-gray-300 mt-1">
+                                                                <p className="text-sm text-indigo-700 rounded-md">{product.sales} Sales</p>
+                                                            </div>
+                                                        </span>
                                                     </span>
+                                                    <ChevronRightIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
                                                 </span>
-                                                {/* <ChevronRightIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                                            </span>
-                                        </a>
-                                    </li>
-                                    // </button>
+                                            </a>
+                                        </li>
+                                    </button>
                                 ))}
                             </ul>
-
-
-                            {/* <nav
-                                className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200"
-                                aria-label="Pagination"
-                            >
-                                <div className="flex-1 flex justify-between">
-                                    <a
-                                        href="#"
-                                        className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500"
-                                    >
-                                        Previous
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500"
-                                    >
-                                        Next
-                                    </a>
-                                </div>
-                            </nav> */}
                         </div>
 
                         {/* Activity table (small breakpoint and up) */}

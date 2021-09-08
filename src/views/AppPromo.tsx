@@ -286,7 +286,7 @@ export default function Example() {
                                                 <img src={product.imageSrc} alt={product.imageAlt} className="w-full object-center object-cover select-none" />
                                             </div>
                                             <div className="sm:col-span-8 lg:col-span-7">
-                                                <h2 className="text-lg font-extrabold text-gray-900 sm:pr-12 select-none">{product.name}</h2>
+                                                <h2 className="text-lg font-bold text-gray-900 sm:pr-12 select-none">{product.name}</h2>
                                                 <section aria-labelledby="information-heading" className="">
                                                     <h3 id="information-heading" className="sr-only select-none">
                                                         Product information
@@ -312,26 +312,14 @@ export default function Example() {
                                                                     <p className="text-lg text-green-700 rounded-md select-none">{product.comission}</p>
                                                                 </div>
                                                             </div>
-                                                            {/* <div className="flex items-center">
-                              {[0, 1, 2, 3, 4].map((rating) => (
-                                <StarIcon
-                                  key={rating}
-                                  className={classNames(
-                                    product.rating > rating ? 'text-gray-900' : 'text-gray-200',
-                                    'h-5 w-5 flex-shrink-0'
-                                  )}
-                                  aria-hidden="true"
-                                />
-                              ))}
-                            </div> */}
                                                         </div>
                                                     </div>
                                                 </section>
 
                                                 <section aria-labelledby="options-heading" className="mt-6">
-                                                    <h3 id="options-heading" className="sr-only">
+                                                    {/* <h3 id="options-heading" className="sr-only">
                                                         Product options
-                                                    </h3>
+                                                    </h3> */}
 
                                                     <form>
                                                         {/* Colors */}
@@ -435,7 +423,7 @@ export default function Example() {
             <div className="w-full h-screen">
                 <header className="bg-white">
                     <nav className="flex justify-between w-full bg-white text-gray-600 p-3 pb-3 fixed z-50 pt-8 border b-bottom ">
-                        <span className="font-bold text-lg">Promos</span>
+                        <span className="font-medium text-lg">Promos</span>
                         <div className="md:items-center md:w-auto flex">
                             <div className="md:flex hidden">
                                 {links.map((link, i) => (
@@ -464,7 +452,7 @@ export default function Example() {
                 </header>
                 <header className="bg-white">
                     <nav className="flex justify-between w-full bg-white text-gray-600 p-2 pb-3 fixed z-40 pt-8">
-                        <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span>
+                        {/* <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span> */}
                     </nav>
                     <nav className="flex justify-between w-full bg-white text-gray-600 p-2 pb-3 border b-bottom fixed z-30 pt-20">
                         <div className="w-full relative flex items-center justify-between max-w-6xl mx-auto py-2 mt-0 px-2 text-lg font-medium text-gray-900 sm:px-6 lg:px-8 xl:px-18">
@@ -508,7 +496,7 @@ export default function Example() {
                         {/* <div className="fixed bg-white"> */}
                         {/* <div className="relative"> */}
                         <div className="relative flex justify-between max-w-6xl mx-auto py-2 mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8 xl:px-8">
-                            <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span>
+                            {/* <span className="pr-3 text-lg font-medium text-gray-900">Active Promotions</span> */}
                         </div>
                         {/* </div> */}
                         {/* 
@@ -547,8 +535,8 @@ export default function Example() {
 
                         </div> */}
                         {/* Activity list (smallest breakpoint only) */}
-                        <div className="shadow sm:hidden">
-                            <ul role="list" className="mt-16 pt-6 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
+                        <div className="sm:hidden">
+                            <ul role="list" className="mt-24 pt-5 mb-12 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
 
                                 {transactions.map((transaction) => (
                                     <button
@@ -588,7 +576,7 @@ export default function Example() {
                                                                 </div>
                                                             </div>
                                                             <div className=" border-gray-300 mt-1">
-                                                                <p className="text-sm text-green-700 rounded-md">{product.comission} / sale</p>
+                                                                <p className="text-sm text-green-700 rounded-md">{product.comission} / Sale</p>
                                                             </div>
                                                         </span>
                                                     </span>
@@ -623,7 +611,7 @@ export default function Example() {
 
                         {/* Activity table (small breakpoint and up) */}
                         <div className="hidden sm:block">
-                            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 pt-2">
                                 <div className="flex flex-col mt-2">
                                     <div className="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
                                         <table className="min-w-full divide-y divide-gray-200">
