@@ -38,10 +38,7 @@ import {
   ScaleIcon,
   ShieldCheckIcon,
   UserGroupIcon,
-  UserIcon,
   XIcon,
-  ShoppingBagIcon,
-  CurrencyDollarIcon,
 } from '@heroicons/react/outline'
 import {
   CashIcon,
@@ -50,27 +47,25 @@ import {
   ChevronRightIcon,
   OfficeBuildingIcon,
   SearchIcon,
+  CurrencyDollarIcon
 } from '@heroicons/react/solid'
 import React from 'react'
 
 const navigation = [
-  { name: 'Home', href: '/home', icon: HomeIcon, current: true },
-  { name: 'Promotions', href: '/promotions', icon: TagIcon, current: false },
-  { name: 'Employees', href: '/employees', icon: UserGroupIcon, current: false },
-  { name: 'Comissions', href: '/comissions', icon: CreditCardIcon, current: false },
-  { name: 'Analytics', href: '/analytics', icon: DocumentReportIcon, current: false },
+  { name: 'Home', href: '#', icon: HomeIcon, current: true },
+  { name: 'Promotions', href: '#', icon: TagIcon, current: false },
+  { name: 'Employees', href: '#', icon: UserGroupIcon, current: false },
+  { name: 'Comission', href: '#', icon: CreditCardIcon, current: false },
+  { name: 'Analytics', href: '#', icon: DocumentReportIcon, current: false },
 ]
 const secondaryNavigation = [
-  { name: 'Settings', href: '/billing', icon: CogIcon },
+  { name: 'Settings', href: '#', icon: CogIcon },
   { name: 'Help', href: '#', icon: QuestionMarkCircleIcon },
 ]
 const cards = [
   { name: 'Sales This Month', href: '#', icon: CurrencyDollarIcon, amount: '$60,659.45' },
   { name: 'Sales This Week', href: '#', icon: CurrencyDollarIcon, amount: '$18,758.99' },
   { name: 'Sales Today', href: '#', icon: CurrencyDollarIcon, amount: '$5,531.21' },
-  { name: 'Active Promotions', href: '#', icon: TagIcon, amount: '24' },
-  { name: 'Active Sales Members', href: '#', icon: UserIcon, amount: '315' },
-  { name: 'Promo Items Sold - Past 30 days', href: '#', icon: ShoppingBagIcon, amount: '1060' },
   // More items...
 ]
 const transactions = [
@@ -330,7 +325,7 @@ export default function Home() {
       </div>
 
       <div className="flex-1 overflow-auto focus:outline-none">
-        <div className="relative z-10 flex-shrink-0 flex h-16 border-b border-gray-200 lg:border-none">
+        <div className="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200 lg:border-none">
           <button
             type="button"
             className="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden"
@@ -340,14 +335,22 @@ export default function Home() {
             <MenuAlt1Icon className="h-6 w-6" aria-hidden="true" />
           </button>
           {/* Search bar */}
-          <div className="flex-1 px-4 flex justify-between lg:px-8">
+          <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
             <div className="flex-1 flex">
               <form className="w-full flex md:ml-0" action="#" method="GET">
-                <div className="relative w-full text-gray-400 bg-gray-100 focus-within:text-gray-600">
-                  <div
+                <label htmlFor="search-field" className="sr-only">
+                  Search
+                </label>
+                <div className="relative w-full text-gray-400 focus-within:text-gray-600">
+                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none" aria-hidden="true">
+                    <SearchIcon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <input
                     id="search-field"
+                    name="search-field"
                     className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent sm:text-sm"
                     placeholder="Search"
+                    type="search"
                   />
                 </div>
               </form>
@@ -355,7 +358,7 @@ export default function Home() {
             <div className="ml-4 flex items-center md:ml-6">
               <button
                 type="button"
-                className="p-1 bg-gray-200 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 <span className="sr-only">View notifications</span>
                 <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -364,15 +367,12 @@ export default function Home() {
               {/* Profile dropdown */}
               <Menu as="div" className="ml-3 relative">
                 <div>
-                  <Menu.Button className="max-w-xs rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50">
-                    {/* <img
+                  <Menu.Button className="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50">
+                    <img
                       className="h-8 w-8 rounded-full"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                       alt=""
-                    /> */}
-                    <span className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gray-500">
-                      <span className="font-medium leading-none text-white">EB</span>
-                    </span>
+                    />
                     <span className="hidden ml-3 text-gray-700 text-sm font-medium lg:block">
                       <span className="sr-only">Open user menu for </span>Emilia Birch
                     </span>
@@ -430,30 +430,24 @@ export default function Home() {
         </div>
         <main className="flex-1 relative pb-8 z-0 overflow-y-auto">
           {/* Page header */}
-          <div className="bg-gray-100 shadow">
+          <div className="bg-white shadow">
             <div className="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
-              <div className="py-6 md:flex md:items-center md:justify-between lg:border-gray-200">
+              <div className="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-gray-200">
                 <div className="flex-1 min-w-0">
                   {/* Profile */}
                   <div className="flex items-center">
-                    {/* <img
+                    <img
                       className="hidden h-16 w-16 rounded-full sm:block"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80"
                       alt=""
-                    /> */}
-                    {/* <span className="hidden inline-flex items-center justify-center h-16 w-16 rounded-full bg-gray-500 sm:block">
-                          <span className="font-medium leading-none text-white text-xl">EB</span>
-                        </span> */}
+                    />
                     <div>
                       <div className="flex items-center">
-                        {/* <img
+                        <img
                           className="h-16 w-16 rounded-full sm:hidden"
                           src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.6&w=256&h=256&q=80"
                           alt=""
-                        /> */}
-                        <span className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gray-500 sm:hidden">
-                          <span className="font-medium leading-none text-white text-xl">EB</span>
-                        </span>
+                        />
                         <h1 className="ml-3 text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">
                           Welcome, Emilia Birch
                         </h1>
@@ -484,14 +478,15 @@ export default function Home() {
                     Add Employee
                   </button>
                   <a
-                    href="/products"
+                          href="/addEmployee"
+                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        >
+                  <button
+                    type="button"
+                    className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
-                    <button
-                      type="button"
-                      className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                      Add Promotion
-                    </button>
+                    Add Product
+                  </button>
                   </a>
                 </div>
               </div>
@@ -506,7 +501,7 @@ export default function Home() {
                 {cards.map((card) => (
                   <div key={card.name} className="bg-white overflow-hidden shadow rounded-lg">
                     <div className="p-5">
-                      <div className="flex">
+                      <div className="flex items-center">
                         <div className="flex-shrink-0">
                           <card.icon className="h-6 w-6 text-gray-400" aria-hidden="true" />
                         </div>
@@ -514,26 +509,26 @@ export default function Home() {
                           <dl>
                             <dt className="text-sm font-medium text-gray-500 truncate">{card.name}</dt>
                             <dd>
-                              <div className="text-xl font-medium text-gray-900">{card.amount}</div>
+                              <div className="text-lg font-medium text-gray-900">{card.amount}</div>
                             </dd>
                           </dl>
                         </div>
                       </div>
                     </div>
-                    {/* <div className="bg-gray-50 px-5 py-3">
+                    <div className="bg-gray-50 px-5 py-3">
                       <div className="text-sm">
                         <a href={card.href} className="font-medium text-indigo-700 hover:text-indigo-900">
-                          View all
+                          {/* View all */}
                         </a>
                       </div>
-                    </div> */}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
             <h2 className="max-w-6xl mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8">
-              Recent Sales
+              Recent Activity
             </h2>
 
             {/* Activity list (smallest breakpoint only) */}
@@ -686,6 +681,6 @@ export default function Home() {
           </div>
         </main>
       </div>
-    </div >
+    </div>
   )
 }

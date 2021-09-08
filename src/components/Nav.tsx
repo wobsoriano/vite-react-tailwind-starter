@@ -7,25 +7,43 @@ const Nav = () => {
   const location = useLocation()
 
   const links = [
-    { text: 'Home', to: '/' },
-    { text: 'About', to: '/about' },
+    { text: 'Home', to: '/home' },
+    { text: 'Promotions', to: '/promotions' },
+    { text: 'Products', to: '/products' },
+    { text: 'Add Promotion', to: '/AddPromotion' },
+    { text: 'Employees', to: '/employees' },
+    { text: 'Comissions', to: '/comissions' },
+    { text: 'Analytics', to: '/analytics' },
+    // { text: 'About', to: '/about' },
+    { text: 'Sign in', to: '/signIn' },
+    // { text: 'Options', to: '/options' },
+    // { text: 'Table', to: '/table' },
+    { text: 'Orders', to: '/orders' },
+    { text: 'AppHome', to: '/appHome' },
+    // { text: 'Add Product', to: '/addProduct' },
+
+    // { text: 'Admin', to: '/admin' },
+    // { text: 'List', to: '/list' },
+    // { text: 'Product', to: '/product' },
+
+
   ]
 
   const activeClass = 'text-white bg-gray-900'
   const inactiveClass = 'text-gray-300 hover:text-white hover:bg-gray-700'
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
+            {/* <div className="flex-shrink-0">
               <img
                 className="h-8 w-8"
                 src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                 alt="Workflow logo"
               />
-            </div>
+            </div> */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {links.map((link, i) => (
